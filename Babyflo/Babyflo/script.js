@@ -54,7 +54,7 @@ async function loadDatabaseProducts() {
     if (!gridContainer) return;
 
     try {
-        const response = await fetch('http://localhost:5190/api/products');
+        const response = await fetch('https://babyflo-backend-2-0.onrender.com/api/products');
         const products = await response.json();
 
         gridContainer.innerHTML = '';
@@ -211,7 +211,7 @@ function setupContactForm() {
         const message = document.getElementById('contactMessage').value.trim();
 
         try {
-            const response = await fetch('http://localhost:5190/api/contact/submit', {
+            const response = await fetch('https://babyflo-backend-2-0.onrender.com/api/contact/submit', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ name, email, message })
